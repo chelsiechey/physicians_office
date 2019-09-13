@@ -1,0 +1,16 @@
+
+
+<h1 class="ui center aligned icon header">
+  <i class="circular users icon"></i>
+  Patients
+</h1>
+<br>
+<div class="ui raised very padded text container segment">
+<div class="ui list">
+  <% @patients.each do |patient| %>
+    <div class="item"><%= link_to patient.patient_full_name, patient %></div>
+  <% end %>
+</div>
+</div>
+
+

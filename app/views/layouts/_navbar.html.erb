@@ -1,0 +1,28 @@
+
+    <div class='navbar'>
+      <div class="ui attached stackable menu">
+        <div class="ui container">
+          <div class="item">
+            <%= link_to 'Physicians', physicians_path %>
+          </div>
+          <div class="item">
+            <%= link_to 'Add a physician', new_physician_path %>
+          </div>
+          <div class="item">
+            <%= link_to 'Current Patients', patients_path %>
+          </div>
+          <div class="item">
+            <%= link_to 'New Patient', new_patient_path %>
+          </div>
+          <div class="right menu">
+            <div class="right item">
+              <i class="search icon"></i>
+              <%= form_tag(search_page_path, :method => "get", :class => 'ui action left icon input') do %>  
+              <%= search_field_tag :search, params[:search], placeholder: "Search all" %>
+              <%= button_tag "Search", :class => 'ui button',:name => nil%>  
+              <% end %> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

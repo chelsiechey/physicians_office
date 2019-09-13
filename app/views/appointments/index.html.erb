@@ -1,0 +1,28 @@
+<h1 class='ui header'><%= @physician.physician_full_name %> Appointments</h1>
+
+<table class="ui celled table">
+  <thead>
+    <tr><th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Remove</th>
+  </tr></thead>
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td data-label="Name"><%= appointment.patient.patient_full_name %></td>
+        <td data-label="Phone"><%= appointment.patient.phone_number %></td>
+        <td data-label="Email"><%= appointment.patient.email %></td>
+        <td data-label="Date"><%= appointment.date %></td>
+        <td data-label="Time"><%= appointment.time %></td>
+        <td><%= link_to "Destroy", physician_appointment_path(@physician, appointment), method: :delete %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Add Appointment', new_physician_appointment_path(@physician) %>
+
+

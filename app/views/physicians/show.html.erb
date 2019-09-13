@@ -1,0 +1,55 @@
+
+<h1 class="ui center aligned icon header">
+  <i class="circular user md icon"></i>
+  View Physician
+</h1>
+
+<br>
+<div class="ui raised very padded text container segment">
+<h2 class='ui header'><%= @physician.physician_full_name %>: <%= @physician.specialty %></h2>
+<ul>
+  <li>
+    Phone: <%=@physician.phone_number %>
+  </li>
+  <li>
+    Email: <%=@physician.email %>
+  </li>
+</ul>
+<br>
+<h2 class='ui header'>Patients</h2>
+  <p><%= @physician.patients.length <= 0 ? 'No Patients' : '' %></p>
+<ul>
+  <% @physician.patients.each do |patient| %>
+    <li>
+    <i class="user icon"></i><%= link_to patient.patient_full_name, patient %>
+    </li>
+  <% end %>
+</ul>
+<br>
+<%= link_to 'View Appointments', physician_appointments_path(@physician) %>
+
+<br />
+
+
+</div>
+
+<div class="ui animated button" tabindex="0">
+  <div class="visible content"><%= link_to 'Delete Physician', @physician, :method => :delete %></div>
+  <div class="hidden content">
+    <i class="trash alternate icon"></i>
+    <%= link_to 'Delete', @physician, method: :delete %>
+  </div>
+  </div>
+  <br>
+  <div class="ui animated button" tabindex="0">
+  <div class="visible content"><%= link_to 'Edit Physician', edit_physician_path(@physician) %></div>
+  <div class="hidden content">
+    <i class="pencil alternate icon"></i>
+    <%= link_to 'Edit', edit_physician_path(@physician) %>
+  </div>
+</div>
+
+</div>
+
+
+

@@ -1,0 +1,29 @@
+<h1>Patient</h1>
+
+<!-- form_with(model: @patient, local: true, class: 'form') -->
+<div class="ui form">
+  <div class="fields">
+    <div class="field">
+    <%= form_for @patient do |f| %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, required: true %>
+      <br><br>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, required: true %>
+      <br><br>
+
+      <%= f.label :phone_number %>
+      <%= f.text_field :phone_number, required: true %>
+      <br><br>
+
+      <%= f.label :email %>
+      <%= f.text_field :email, required: true %>
+      <br><br>
+
+      <%= f.submit %>
+      <br><br>
+    </div>
+  </div>
+</div>
+<% end %>

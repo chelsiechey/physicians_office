@@ -1,0 +1,25 @@
+<h1>Add Appointment</h1>
+
+
+<div class="ui form">
+<%= form_for [@physician, @appointment] do |a| %>
+  <div class="field">
+  <%= a.label :date %>
+  <%= a.text_field :date, required: true %>
+  </div>
+
+  <div class="field">
+  <%= a.label :time %>
+  <%= a.text_field :time, required: true %>
+  </div>
+
+  <div class="field">
+  <%= a.label :patient %>
+  <%= a.select :patient_id, @patients.collect { |u| [u.patient_full_name, u.id]} %>
+  </div>
+
+
+  <%= a.submit %>
+
+  </div>
+<% end %>

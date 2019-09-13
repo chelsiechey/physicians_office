@@ -1,0 +1,7 @@
+<h3>Search Result</h3>  
+
+<% @results.each do |result| %>  
+<%= result.first_name %> <%= result.last_name %><br>  
+<%= link_to "View Patient?", patient_path(result) %>
+<br>
+<% end %>
